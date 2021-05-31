@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_game.*
 import org.tensorflow.lite.support.image.TensorImage
 import tw.edu.pu.csim.tcyang.crazyshape.ml.Shapes
 
+
+
 class GameActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
