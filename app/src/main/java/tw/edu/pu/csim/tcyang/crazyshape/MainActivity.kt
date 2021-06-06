@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         GlideApp.with(this)
             .load(R.drawable.cover)
             .override(800, 600)
-            .into(img)
+            .into(imgTitle)
 
         RndShape()
 
@@ -38,7 +38,8 @@ class MainActivity : AppCompatActivity() {
                     putExtra("形狀",Flag)
                 }
 
-                startActivity(intent)
+                //startActivity(intent)
+                startActivityForResult(intent,99)
                 return true
             }
         })
@@ -61,5 +62,14 @@ fun RndShape(){
         4->imgNext.setImageResource(R.drawable.triangle)
     }
 }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == 99){
+            intent = Intent(this@MainActivity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
 
 }
